@@ -15,8 +15,7 @@
         "test": "jest"
     },
     "dependencies": {
-        "@ulthar/blamey": "workspace:^",
-        "@ulthar/immuty": "workspace:^",
-        "@ulthar/typey": "workspace:^"
+        "@ulthar/blamey": "^0.1",
+        "@ulthar/typey": "^0.1"
     }
 }
