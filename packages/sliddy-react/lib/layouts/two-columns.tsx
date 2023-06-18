@@ -16,11 +16,11 @@ export interface TwoColumnProps {
 }
 
 export function TwoColumnsLayout({ slide }: TwoColumnProps) {
-    if (!slide.elements) {
+    if (!slide.content) {
         console.error("No elements in slide", slide);
         return null;
     }
-    const [firstElementColumn, secondElementColumn] = slide.elements;
+    const [firstElementColumn, secondElementColumn] = slide.content;
 
     const firstColumn = createComponentsFromElementArray(firstElementColumn);
     const secondColumn = createComponentsFromElementArray(secondElementColumn);

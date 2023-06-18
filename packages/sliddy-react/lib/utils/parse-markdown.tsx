@@ -8,10 +8,10 @@ type Matcher = {
 };
 
 export const Strong = styled.strong(({ theme }) => ({
-    color: theme.accentColor,
+    color: theme.colors.accent,
 }));
 export const Emph = styled.em(({ theme }) => ({
-    color: theme.accentColor,
+    color: theme.colors.accent,
 }));
 
 const matchers: Matcher[] = [

@@ -3,7 +3,6 @@ import { SlideComponent } from "./slide.js";
 import { Deck } from "@ulthar/sliddy-core";
 import { styled } from "styled-components";
 import { ThemeProvider } from "styled-components";
-import { DefaultTheme } from "styled-components";
 
 export type DeckProps = {
     deck: Deck;
@@ -15,10 +14,10 @@ const DeckContainer = styled.div(({ theme }) => ({
     height: "100vh",
     width: "100%",
     overflow: "hidden",
-    color: theme.primaryColor,
-    backgroundColor: theme.backgroundColor,
-    fontFamily: theme.fontFamily,
-    fontSize: theme.fontSize,
+    color: theme.colors.primary,
+    backgroundColor: theme.colors.background,
+    fontFamily: theme.fonts.primary,
+    fontSize: theme.text.size,
 }));
 
 const DeckProgressSlider = styled.div(({ theme }) => ({
@@ -27,7 +26,7 @@ const DeckProgressSlider = styled.div(({ theme }) => ({
     left: "0",
     height: "3px",
     transition: "width 0.5s ease-in-out",
-    backgroundColor: theme.accentColor,
+    backgroundColor: theme.colors.accent,
 }));
 
 export function DeckComponent({ deck }: DeckProps) {
@@ -86,7 +85,7 @@ export function DeckComponent({ deck }: DeckProps) {
     const currentSlide = deck.slides[currentIndex];
 
     return (
-        <ThemeProvider theme={deck.styles as DefaultTheme}>
+        <ThemeProvider theme={deck.theme}>
             <DeckContainer
             // style={{
             //     cursor: cursorPointer

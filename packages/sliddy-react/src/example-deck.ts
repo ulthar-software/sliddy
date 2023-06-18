@@ -1,19 +1,24 @@
 import { Deck } from "@ulthar/sliddy-core";
 
-export default {
+const deck: Deck = {
     name: "NodeJS - Day 1",
-    properties: {},
-    styles: {
-        primaryColor: "#fff",
-        accentColor: "#E84545",
-        backgroundColor: "#202124",
-        fontSize: "32px",
-        fontFamily: "Roboto, sans-serif",
-        headerFontFamily: "Montserrat, sans-serif",
+    theme: {
+        colors: {
+            primary: "#fff",
+            accent: "#E84545",
+            background: "#202124",
+        },
+        fonts: {
+            primary: "Roboto, sans-serif",
+            headings: "Montserrat, sans-serif",
+        },
+        text: {
+            size: "32px",
+        },
     },
     slides: [
         {
-            type: "welcome",
+            layout: "welcome",
             properties: {
                 title: "Intro a **NodeJS**",
                 subtitle: "Day 1",
@@ -25,7 +30,7 @@ export default {
             },
         },
         {
-            type: "presenter",
+            layout: "presenter",
             properties: {
                 name: "Pablo Baleztena",
                 handle: "@piarrot",
@@ -34,7 +39,7 @@ export default {
             },
         },
         {
-            type: "objectives",
+            layout: "objectives",
             properties: {
                 objectivesTitle: "Objetivos de hoy...",
                 objectives: [
@@ -46,7 +51,7 @@ export default {
             },
         },
         {
-            type: "title",
+            layout: "title",
             properties: {
                 title: "**NodeJS**",
                 subtitle: "¿Qué es?",
@@ -54,8 +59,8 @@ export default {
             },
         },
         {
-            type: "two-columns",
-            elements: [
+            layout: "two-columns",
+            content: [
                 [
                     {
                         type: "heading",
@@ -86,22 +91,22 @@ export default {
             ],
         },
         {
-            type: "blackboard",
+            layout: "blackboard",
             properties: {
                 title: "¿Qué es **NodeJS**?",
                 // file: "/nodejs-architecture.excalidraw",
             },
         },
         {
-            type: "title",
+            layout: "title",
             properties: {
                 title: "La **Terminal**",
                 subtitle: "¿Qué conocen?",
             },
         },
         {
-            type: "two-columns",
-            elements: [
+            layout: "two-columns",
+            content: [
                 [
                     {
                         type: "heading",
@@ -133,8 +138,8 @@ export default {
             ],
         },
         {
-            type: "default",
-            elements: [
+            layout: "default",
+            content: [
                 {
                     type: "block",
                     styles: {
@@ -164,13 +169,13 @@ export default {
             ],
         },
         {
-            type: "title",
+            layout: "title",
             properties: {
                 title: "¿Cómo venimos hasta aquí?",
             },
         },
         {
-            type: "break",
+            layout: "break",
             properties: {
                 title: "Intro a **NodeJS** - Day 1",
                 footer: "Modulo 3 - Backend (NodeJS)",
@@ -180,15 +185,15 @@ export default {
             },
         },
         {
-            type: "title",
+            layout: "title",
             properties: {
                 title: "**CommonJS**",
                 subtitle: "Sistema de **módulos** de NodeJS",
             },
         },
         {
-            type: "two-columns",
-            elements: [
+            layout: "two-columns",
+            content: [
                 [
                     {
                         type: "heading",
@@ -215,12 +220,12 @@ export default {
             ],
         },
         {
-            type: "two-columns",
+            layout: "two-columns",
             properties: {
                 column1Width: "50%",
                 column2Width: "50%",
             },
-            elements: [
+            content: [
                 [
                     {
                         type: "text",
@@ -256,8 +261,8 @@ export default {
             ],
         },
         {
-            type: "default",
-            elements: [
+            layout: "default",
+            content: [
                 {
                     type: "block",
                     styles: {
@@ -287,13 +292,13 @@ export default {
             ],
         },
         {
-            type: "title",
+            layout: "title",
             properties: {
                 title: "¿Cómo venimos hasta aquí?",
             },
         },
         {
-            type: "break",
+            layout: "break",
             properties: {
                 title: "Intro a **NodeJS** - Day 1",
                 footer: "Modulo 3 - Backend (NodeJS)",
@@ -303,15 +308,15 @@ export default {
             },
         },
         {
-            type: "title",
+            layout: "title",
             properties: {
                 title: "**NPM**",
                 subtitle: "Manager de paquetes (módulos) de NodeJS",
             },
         },
         {
-            type: "default",
-            elements: [
+            layout: "default",
+            content: [
                 {
                     type: "block",
                     styles: {
@@ -341,7 +346,7 @@ export default {
             ],
         },
         {
-            type: "break",
+            layout: "break",
             properties: {
                 title: "Intro a **NodeJS** - Day 1",
                 footer: "Modulo 3 - Backend (NodeJS)",
@@ -351,7 +356,7 @@ export default {
             },
         },
         {
-            type: "objectives",
+            layout: "objectives",
             properties: {
                 objectivesTitle: "Objetivos de la clase que viene...",
                 objectives: [
@@ -362,4 +367,6 @@ export default {
             },
         },
     ],
-} as Deck;
+};
+
+export default deck;

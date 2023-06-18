@@ -12,7 +12,7 @@ export const Button = styled.button<PropsWithChildren<ButtonProps>>(
             padding: "1em",
             borderRadius: "1em",
             backgroundColor:
-                type === "accent" ? theme.accentColor : "transparent",
+                type === "accent" ? theme.colors.accent : "transparent",
             color: "#000",
         };
     }
