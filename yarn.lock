@@ -2735,6 +2735,19 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@ulthar/sliddy-backend@workspace:packages/sliddy-backend":
+  version: 0.0.0-use.local
+  resolution: "@ulthar/sliddy-backend@workspace:packages/sliddy-backend"
+  dependencies:
+    "@types/jest": ^29.5.1
+    "@ulthar/blamey": ^0.1
+    "@ulthar/typey": ^0.1
+    jest: ^29.5.0
+    ts-jest: ^29.1.0
+    typescript: ^5.0.4
+  languageName: unknown
+  linkType: soft
+
 "@ulthar/sliddy-core@workspace:^, @ulthar/sliddy-core@workspace:packages/sliddy-core":
   version: 0.0.0-use.local
   resolution: "@ulthar/sliddy-core@workspace:packages/sliddy-core"
