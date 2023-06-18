@@ -17,8 +17,8 @@
         "typescript": "^5.0.4"
     },
     "scripts": {
-        "build": "yarn workspaces --exclude @ulthar/sliddy run build",
-        "test": "yarn workspaces --exclude @ulthar/sliddy run test",
-        "coverage": "yarn workspaces --exclude @ulthar/sliddy run test --coverage"
+        "build": "yarn workspaces foreach --exclude @ulthar/sliddy run build",
+        "test": "yarn workspaces foreach --exclude @ulthar/sliddy run test",
+        "coverage": "yarn workspaces foreach --exclude @ulthar/sliddy run test --coverage"
     }
 }
