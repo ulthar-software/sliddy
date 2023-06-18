@@ -1,11 +1,12 @@
 import { SlideElementStyles } from "./styles.js";
 import { SlideElement } from "./elements/slide-element.js";
 import { PropertyValue } from "./property-value.js";
+import { LayoutTypes } from "./layout.js";
 
 export interface Slide {
-    type: string;
-    elements?: SlideElement[] | SlideElement[][];
-    properties?: Record<string, PropertyValue>;
-    style?: SlideElementStyles;
+    layout: LayoutTypes;
+    properties?: Record<string, any>;
+    styles?: SlideElementStyles;
     notes?: string;
+    content?: SlideElement[] | SlideElement[][];
 }
