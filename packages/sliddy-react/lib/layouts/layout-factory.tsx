@@ -8,6 +8,9 @@ import { TitleLayout } from "./title.js";
 import { Blackboard } from "./blackboard.js";
 import { BreakLayout } from "./break-layout.js";
 import { TwoColumnsLayout } from "./two-columns.js";
+import { MediaIFrame } from "../utils/media-iframe.js";
+import { Heading } from "../utils/heading.js";
+import { parseStringMarkdown } from "../utils/parse-markdown.js";
 
 const layoutFactories: Record<string, (s: Slide) => JSX.Element> = {
     default: (slide: Slide) => (
@@ -24,6 +27,12 @@ const layoutFactories: Record<string, (s: Slide) => JSX.Element> = {
     blackboard: (slide: Slide) => <Blackboard {...(slide.properties as any)} />,
     break: (slide: Slide) => <BreakLayout {...(slide.properties as any)} />,
     "two-columns": (slide: Slide) => <TwoColumnsLayout slide={slide} />,
+    embed: (slide: Slide) => (
+        <DefaultLayout style={slide.styles} {...(slide.properties as any)}>
+            <Heading>{parseStringMarkdown(slide.properties?.title)}</Heading>
+            <MediaIFrame src={slide.properties?.url} />
+        </DefaultLayout>
+    ),
 };
 
 export function createLayoutForSlide(slide: Slide) {

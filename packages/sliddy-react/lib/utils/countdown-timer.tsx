@@ -15,12 +15,9 @@ function formatTime(time: number) {
         (time - hours * 3600000 - minutes * 60000) / 1000
     );
 
-    return (
-        [hours, minutes, seconds]
-            // .filter((value) => value !== null)
-            .map((value) => value.toString().padStart(2, "0"))
-            .join(":")
-    );
+    return [hours, minutes, seconds]
+        .map((value) => value.toString().padStart(2, "0"))
+        .join(":");
 }
 
 export function CountdownTimer({

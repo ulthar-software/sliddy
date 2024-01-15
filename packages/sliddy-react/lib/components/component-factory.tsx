@@ -1,6 +1,7 @@
 import {
     SlideCodeElement,
     SlideElement,
+    SlideTableElement,
     SlideTextElement,
 } from "@ulthar/sliddy-core";
 import { TextElement } from "./text-element.js";
@@ -9,6 +10,8 @@ import { UnorderedListElement } from "./unordered-list.js";
 import { BlockElement } from "./block.js";
 import { CodeElement } from "./code.js";
 import { ImageElement, ImageSlideElement } from "./image.js";
+import { parseStringMarkdown } from "../utils/parse-markdown.js";
+import { TableElement } from "./table.js";
 
 const componentFactories: Record<string, (e: any) => JSX.Element> = {
     text: (element: SlideTextElement) => <TextElement element={element} />,
@@ -20,13 +23,15 @@ const componentFactories: Record<string, (e: any) => JSX.Element> = {
     ),
     block: (element: SlideElement) => <BlockElement element={element} />,
     code: (element: SlideCodeElement) => <CodeElement element={element} />,
+    table: (element: SlideTableElement) => <TableElement element={element} />,
     image: (element: ImageSlideElement) => <ImageElement element={element} />,
 };
 
 export function createComponentFromElement(
     element: SlideElement | string
 ): string | JSX.Element {
-    if (typeof element === "string") return element;
+    if (typeof element === "string")
+        return parseStringMarkdown(element) as JSX.Element;
     return componentFactories[element.type](element);
 }
 

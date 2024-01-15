@@ -31,7 +31,7 @@ export function WelcomeSlide({
             <DivColumn
                 style={{
                     justifyContent: "center",
-                    width: "60%",
+                    width: "55%",
                     paddingLeft: "40px",
                 }}
             >
@@ -54,22 +54,26 @@ export function WelcomeSlide({
                 style={{
                     justifyContent: "center",
                     alignItems: "center",
-                    width: "50%",
+                    width: "45%",
                 }}
             >
-                <MediaIFrame
-                    src={media}
-                    style={{
-                        width: "768px",
-                        height: "432px",
-                    }}
-                />
-                <CountdownTimer
-                    targetHour={startHour}
-                    targetMinute={startMinute}
-                    prependText="Comenzamos en..."
-                    timeoutMessage="Comenzamos en breve..."
-                />
+                {media && (
+                    <MediaIFrame
+                        src={media}
+                        style={{
+                            width: "768px",
+                            height: "432px",
+                        }}
+                    />
+                )}
+                {startHour && (
+                    <CountdownTimer
+                        targetHour={startHour}
+                        targetMinute={startMinute ?? 0}
+                        prependText="Comenzamos en..."
+                        timeoutMessage="Comenzamos en breve..."
+                    />
+                )}
             </DivColumn>
         </FlexContainer>
     );

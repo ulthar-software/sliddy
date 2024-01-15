@@ -8,6 +8,7 @@ export const LayoutTypes = [
     "presenter",
     "objectives",
     "quiz",
+    "embed",
 ] as const;
 
 export type LayoutTypes = (typeof LayoutTypes)[number];

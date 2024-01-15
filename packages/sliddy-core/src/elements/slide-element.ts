@@ -14,6 +14,7 @@ export const SlideElementTypeNames = [
     "code",
     "iframe",
     "heading",
+    "table",
 ] as const;
 export type SlideElementType = (typeof SlideElementTypeNames)[number];
 
@@ -21,5 +22,10 @@ export interface SlideElement {
     type: SlideElementType;
     styles?: SlideElementStyles;
     properties?: Record<string, PropertyValue>;
-    content?: string | string[] | SlideElement[] | SlideElement[][];
+    content?:
+        | string
+        | string[]
+        | string[][]
+        | SlideElement[]
+        | SlideElement[][];
 }

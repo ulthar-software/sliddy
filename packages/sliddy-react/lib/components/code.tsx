@@ -32,19 +32,25 @@ export function CodeElement({ element }: CodeElementProps) {
     const prismClasses: string[] = [];
     if (lineNumbers) prismClasses.push("line-numbers");
 
+    const highlightLines = element.properties.highlightLines || "";
+
     return (
         <pre
             className={prismClasses.join(" ")}
             style={{
-                height: "100%",
                 maxWidth: "100%",
                 fontSize: "24px",
                 ...(element.styles as any),
             }}
+            data-break-lines="80"
+            data-line={highlightLines}
         >
             <code
                 className={"language-" + element.properties.language}
-                style={{ fontSize: "inherit" }}
+                style={{
+                    fontSize: "inherit",
+                    width: "100%",
+                }}
             >
                 {code}
             </code>

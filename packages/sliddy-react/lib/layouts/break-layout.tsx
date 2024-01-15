@@ -8,6 +8,7 @@ import { Timer } from "../utils/timer.js";
 
 export interface BreakLayoutProps {
     title: string;
+    subtitle?: string;
     footer: string;
     media: string;
     durationInMinutes: number;
@@ -16,6 +17,7 @@ export interface BreakLayoutProps {
 
 export function BreakLayout({
     title,
+    subtitle,
     footer,
     media,
     logo,
@@ -31,8 +33,11 @@ export function BreakLayout({
                     paddingLeft: "40px",
                 }}
             >
-                <TitleHeading>¡Descanso!</TitleHeading>
+                <TitleHeading>
+                    {parseStringMarkdown("**¡Descanso!**")}
+                </TitleHeading>
                 <Heading>{parseStringMarkdown(title)}</Heading>
+                <Heading style={{ fontSize: "52px" }}>{subtitle}</Heading>
                 <Heading
                     style={{
                         position: "absolute",

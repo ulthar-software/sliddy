@@ -8,5 +8,6 @@ export interface SlideCodeElement extends SlideElement {
         code?: string;
         file?: string;
         lineNumbers?: boolean;
+        highlightLines?: string;
     };
 }

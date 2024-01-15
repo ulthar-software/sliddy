@@ -93,7 +93,10 @@ export function DeckComponent({ deck }: DeckProps) {
             //         : "default",
             // }}
             >
-                <SlideComponent index={currentIndex} slide={currentSlide} />
+                {currentSlide && (
+                    <SlideComponent index={currentIndex} slide={currentSlide} />
+                )}
+
                 <DeckProgressSlider
                     style={{
                         width: `${

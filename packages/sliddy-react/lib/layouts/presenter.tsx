@@ -1,14 +1,14 @@
 import { DivColumn } from "../utils/div-column.js";
 import { Heading } from "../utils/heading.js";
+import { parseStringMarkdown } from "../utils/parse-markdown.js";
 
 interface PresenterProps {
     name: string;
     avatar: string;
-    contact: string;
-    handle: string;
+    content: string[];
 }
 
-export function Presenter({ name, avatar, handle, contact }: PresenterProps) {
+export function Presenter({ name, avatar, content }: PresenterProps) {
     return (
         <DivColumn
             style={{
@@ -35,9 +35,14 @@ export function Presenter({ name, avatar, handle, contact }: PresenterProps) {
                 />
             </div>
 
-            <Heading>{name}</Heading>
-            <p style={{ fontSize: "0.8em" }}>{contact}</p>
-            <p style={{ fontSize: "0.8em" }}>{handle}</p>
+            <Heading>{parseStringMarkdown(name)}</Heading>
+            {content.map((value) => {
+                return (
+                    <p style={{ fontSize: "0.8em" }}>
+                        {parseStringMarkdown(value)}
+                    </p>
+                );
+            })}
         </DivColumn>
     );
 }

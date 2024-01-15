@@ -25,6 +25,21 @@ const matchers: Matcher[] = [
         component: ({ children }) => <Emph>{children}</Emph>,
     },
     {
+        tag: "`",
+        component: ({ children }) => (
+            <span
+                style={{
+                    fontFamily: "monospace",
+                    backgroundColor: "#0f0f0f",
+                    padding: "0 6px",
+                    whiteSpace: "nowrap",
+                }}
+            >
+                {children}
+            </span>
+        ),
+    },
+    {
         tag: "~~",
         component: ({ children }) => (
             <span

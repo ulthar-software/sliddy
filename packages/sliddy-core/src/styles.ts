@@ -42,6 +42,7 @@ export const SlideElementStylesPropertyNames = [
     "flexShrink",
     "order",
     "animation",
+    "gap",
 ] as const;
 
 export type SlideElementStylesPropertyName =

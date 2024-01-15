@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const TitleHeading = styled.h1(({ theme }) => ({
-    fontSize: "88px",
+    fontSize: "72px",
     fontWeight: "800",
     // textTransform: "uppercase",
     fontFamily: theme.fonts.headings,
@@ -9,7 +9,7 @@ export const TitleHeading = styled.h1(({ theme }) => ({
 }));
 
 export const Heading = styled.h2(({ theme }) => ({
-    fontSize: "72px",
+    fontSize: "60px",
     fontWeight: 700,
     fontFamily: theme.fonts.headings,
     margin: "0 0 1rem 0",
